@@ -11,4 +11,4 @@ while a <= 9:
         print(f'{a} X {b} = {result}')
         b = b + 1
 
-    a = a + 1 
+    a = a + 1
