@@ -15,4 +15,5 @@ print(upper_str)
 print(lower_str)
 print(capitalized_str)
 
+# print(input().swapcase()) 통해서 한번에 해결가능 ㅜ
 # upper() - > 전부 대문자 변경, lower() - > 전부 소문자 변경 swapcase() - > 대소문자 바꿈 capitalize() - > 맨앞만 대문자
