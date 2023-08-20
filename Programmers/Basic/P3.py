@@ -1,8 +1,8 @@
 # 문자열 돌리기 ~
 
-# str = input()
-# for char in str: #for문으로 출력하면 이런식으로나오는구먼
-#     print(char)
+str = input()
+for char in str: #for문으로 출력하면 이런식으로나오는구먼
+    print(char)
 
 # while로 해본다면?
 
@@ -15,4 +15,4 @@
 #     print(str)
 #     i = i + 1
 
-print('\n'.join(input()))
+# print('\n'.join(input())) 가장 간단한 코드~

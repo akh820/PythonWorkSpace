@@ -11,12 +11,17 @@ while x <= 5:
 # 1부터 76까지의 합을 구하는 코드를 작성하자.
 
 print("문2==="*20)
-
-a = 1
 sum = 0
-while a <= 76:
-    sum = sum + a
-    a = a + 1
+for i in range(1,77) :
+    sum = sum + i
+    i += 1
+print("1~76까지더함", sum)
+
+# a = 1
+# sum = 0
+# while a <= 76:
+#     sum = sum + a
+#     a = a + 1
 
 print(sum)
 
