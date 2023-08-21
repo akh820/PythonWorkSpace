@@ -38,7 +38,7 @@ c1.run(10)
 c2.run(50)
 
 c1.showStatus()
-c2.showStatus
+c2.showStatus()
 
 
 
