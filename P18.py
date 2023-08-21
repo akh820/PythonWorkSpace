@@ -6,12 +6,12 @@
 # 클래스 선언 -> 인스턴스 생성
 # 함수 선언 -> 함수 호출
 class Car: # 클래스는 글자 맨앞 대문자 사용
-    def __init__(uzae, name, fuel, speed, distance): # init 초기화, 생성자, uzae는 자기자신의 메모리 주석값
+    def __init__(self, name, fuel, speed, distance): # init 초기화, 생성자, self는 자기자신의 메모리 주석값
         # 생성자 - 속성 정의
-        uzae.name = name
-        uzae.fuel = fuel
-        uzae.speed = speed
-        uzae.distance = distance
+        self.name = name
+        self.fuel = fuel
+        self.speed = speed
+        self.distance = distance
 # 메소드(기능) : 쉽게 생각하면 클래스 안에 선언된 함수, self가 핵심
     def showStatus(self): #self를 무조건 써줘야한다, Parameter를 받지않음
         print(f'{self.name} = 연료 : {self.fuel}, 속도 : {self.speed}, 현재거리 : {self.distance}')
