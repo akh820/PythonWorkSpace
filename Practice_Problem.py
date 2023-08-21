@@ -272,12 +272,11 @@ while num <= 100:
     count = 0  # 약수의 개수를 세어줄 변수
     i = 1  # 1~num까지 증가할 변수
     while i <= num:
-        if num % i == 0:  # 나누어지면 약수
+        if num % i == 0:  # 나누어지면 약수 1과 자기자신 이 되면 count는 2가된다.
             count += 1
         i += 1  # 1증가
     if count == 2:  # 약수의 개수가 2개면 출력
         print(f'{num}의 약수가 {count}개이므로 "소수"입니다.')
-
     num += 1  # 100까지 증가
 
 # Q.방정식 2x+4y=10의 모든 해를 구하시오. 
@@ -287,33 +286,83 @@ while num <= 100:
 # x=3, y=1
 # x=5, y=0
 
-# print("==="*20)
+print("==="*20)
 
-# x = 0
+x = 0
 
-# while x <= 10:
+while x <= 10:
     
-#     y = 0
-#     # print(f'현재 X의 값 : {x}')
-#     while y <= 10:
-#         result = (2*x) + (4*y)
-#         # print(f'현재 y의 값 : {y}')
-#         # print(f'result 의 값 : {result}')
-#         if result == 10:
-#             print(f'x={x}, y={y}')
-#         y = y + 1
-#     x = x + 1
+    y = 0
+    # print(f'현재 X의 값 : {x}')
+    while y <= 10:
+        result = (2*x) + (4*y)
+        # print(f'현재 y의 값 : {y}')
+        # print(f'result 의 값 : {result}')
+        if result == 10:
+            print(f'x={x}, y={y}')
+        y = y + 1
+    x = x + 1
+
+print("==="*20)
 
 # Q.# int타입의 변수 num 이 있을 때, 각 자리의 합을 더한 결과를 출력하는 코드를 완성하라. 
 # 만일 변수 num의 값이 12345라면, ‘1+2+3+4+5’의 결과인 15를 출력하라. 
 # [주의] 문자열로 변환하지 말고 숫자로만 처리해야 한다.
 # (API를 사용하지 않는다. 알고리즘으로만 처리)
 
-# print("==="*20)
+a = 10000
+k = 0
+num = 12345
+while a <= 90000:
+    # num = 12345
+    if num >= 10000:      # num = 12345              
+        k = num // 10000  # k = 1                  
+        print(k)          # k = 1          
+        num = num - a     # num = 12345 - 10000               
+    if ((num-a) <= 0):    # num = 2345 - 10000 -> break               
+        break             #       
+    a = a + 10000         #           
+b = 1000
+
+while b <= 9000:                     #  b = 1000 실행              # b = 2000 실행  
+    if num >= 1000:                  #  num = 2345 실행            # num = 1345 실행   
+        k = num // 1000              #  k = 2345 // 1000 == 2      # k = 1345 // 1000 == 1       
+        print(k)                     #  k = 2
+        num = num - b                #  num = 2345 - 1000 = 1345                   
+    if ((num-b) <= 0):               #  1345 - 1000 == 345로 반복     
+        break#
+    
+    b = b + 1000   
+c = 100
+while c <= 900:
+    if num >= 100:
+        k = num // 100 # 1
+        print(k)
+        num = num - c # num = 2345 
+    if ((num-c) <= 0):
+        break
+    
+    c = c + 100   
+
+print("==="*20)
 
 # 1~10000사이에 8이 몇번 나오는가?
 # 정답 ) 4000
 # 힌트 ) 8838 = 3개...
 
-    
+start = 1
+end = 10000
+count = 0
+var = 0
 
+while start <= end: # 8,18,28,38,48,58,68,78,98, + 80,81,82,83,84,85,86,87,88,89
+    var = start
+    while True:
+        if var % 10 == 8:
+            count += 1
+        var = var // 10
+        if var <= 0:
+            break
+    start += 1
+
+print(count)
