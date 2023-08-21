@@ -247,13 +247,13 @@ while a <= 10:
 print("==="*20)
 
 # 863은 소수인가?
-value = 863
+value = 2
 a = 2
 isPrime = True # 한번이라도 걸리면 False로 스위칭?
-while a < value/2: # 2로 나누는 이유는 속도를 빠르게 어차피 몫이 1이상이나옴 
+while a < value: # 2로 나누는 이유는 속도를 빠르게 어차피 몫이 1이상이나옴 
 
-    if value % a==0:
-        isPrime = False
+    if value % a == 0: # 나눴을때 목이 0 이여야 발동 , %는 나머지 구하는거.
+        isPrime = False 
         break
 
     a = a + 1
@@ -267,21 +267,18 @@ else :
 
 print("==="*20)
 
-value = 7
-a = 2
-isPrime = True # 한번이라도 걸리면 False로 스위칭?
-while a < value: # 2로 나누는 이유는 속도를 빠르게 어차피 몫이 1이상이나옴 
+num = 2
+while num <= 100:
+    count = 0  # 약수의 개수를 세어줄 변수
+    i = 1  # 1~num까지 증가할 변수
+    while i <= num:
+        if num % i == 0:  # 나누어지면 약수
+            count += 1
+        i += 1  # 1증가
+    if count == 2:  # 약수의 개수가 2개면 출력
+        print(f'{num}의 약수가 {count}개이므로 "소수"입니다.')
 
-    if value % a==0:
-        isPrime = False
-        break
-
-    a = a + 1
-
-if isPrime == True:
-    print(f'{value}는 소수입니다')
-else :
-    print(f'{value}는 소수가 아닙니다')
+    num += 1  # 100까지 증가
 
 # Q.방정식 2x+4y=10의 모든 해를 구하시오. 
 # 단, x와 y는 정수이고 각각의 범위는 0<=x<=10, 0<=y<=10 이다.
@@ -305,8 +302,6 @@ else :
 #         if result == 10:
 #             print(f'x={x}, y={y}')
 #         y = y + 1
-    
-    
 #     x = x + 1
 
 # Q.# int타입의 변수 num 이 있을 때, 각 자리의 합을 더한 결과를 출력하는 코드를 완성하라. 
@@ -316,57 +311,9 @@ else :
 
 # print("==="*20)
 
-
-# num = 12345 # 10000 + 2000 + 300 + 40 + 5
-# a = num // 10000 
-# b = num // 1000
-# c = num // 100
-# d = num // 10
-# e = num // 1
-# print(a,b,c,d,e)
-
 # 1~10000사이에 8이 몇번 나오는가?
 # 정답 ) 4000
 # 힌트 ) 8838 = 3개...
 
-# print("==="*20)
-
-# x = 1
-
-# while x <= 10: # 여기선 x== 8일떄 찾는다고 쳐 <= 100일때는? 
     
-    
-    
-    
-    
-#     x = x + 1
-
-# print("==="*20)
-
-# x = 1
-# while x <= 99:
-#     if x % 3 == 0: # 30의자리에서 2번, 60의자리에서 2번, 90의 자리에서 2번
-#         print(f'{x} 박수 한번')
-#         while 33 <= x < 40:
-#             if x % 3 == 0:
-#                 print(f'{x} 박수 두번')
-#                 x = x + 1
-
-#     x = x + 1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
