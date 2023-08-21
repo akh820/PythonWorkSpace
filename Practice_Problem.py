@@ -244,26 +244,44 @@ while a <= 10:
 # Q.863은 소수 인가? 제가 어떻게 아나요?
 # (소수는 1과 자신이외의 정수로 나누어지지 않는 수)
 
-# print("==="*20)
+print("==="*20)
 
-# a = input("확인하실 숫자를 입력해주세요 : ") # 임의의 수
-# b = int(a)
-# if (b % 1 == 0 and b // b == 1 and b % 2 != 0):
-#     print(f"입력하신 숫자{b}는 소수 입니다. ^ _ ^")
-# else:
-#     print(f"입력하신 숫자{b}는 소수가 아닙니다. ㅠ _ ㅠ")
+# 863은 소수인가?
+value = 863
+a = 2
+isPrime = True # 한번이라도 걸리면 False로 스위칭?
+while a < value/2: # 2로 나누는 이유는 속도를 빠르게 어차피 몫이 1이상이나옴 
 
-#     # 17은 17로 나눴을때 몫 = 1, 1로 나눴을떄 나머지 = 0
+    if value % a==0:
+        isPrime = False
+        break
+
+    a = a + 1
+
+if isPrime == True:
+    print("소수입니다")
+else :
+    print("소수가 아닙니다")
 
 # Q.2~100사이의 소수를 구해보자
 
 print("==="*20)
 
+value = 7
 a = 2
-while a <= 100:
-    if (a % 1 == 0 and a // a == 1 and a % 2 != 0):
-        print(f'{a}')
+isPrime = True # 한번이라도 걸리면 False로 스위칭?
+while a < value: # 2로 나누는 이유는 속도를 빠르게 어차피 몫이 1이상이나옴 
+
+    if value % a==0:
+        isPrime = False
+        break
+
     a = a + 1
+
+if isPrime == True:
+    print(f'{value}는 소수입니다')
+else :
+    print(f'{value}는 소수가 아닙니다')
 
 # Q.방정식 2x+4y=10의 모든 해를 구하시오. 
 # 단, x와 y는 정수이고 각각의 범위는 0<=x<=10, 0<=y<=10 이다.
@@ -272,24 +290,24 @@ while a <= 100:
 # x=3, y=1
 # x=5, y=0
 
-print("==="*20)
+# print("==="*20)
 
-x = 0
+# x = 0
 
-while x <= 10:
+# while x <= 10:
     
-    y = 0
-    # print(f'현재 X의 값 : {x}')
-    while y <= 10:
-        result = (2*x) + (4*y)
-        # print(f'현재 y의 값 : {y}')
-        # print(f'result 의 값 : {result}')
-        if result == 10:
-            print(f'x={x}, y={y}')
-        y = y + 1
+#     y = 0
+#     # print(f'현재 X의 값 : {x}')
+#     while y <= 10:
+#         result = (2*x) + (4*y)
+#         # print(f'현재 y의 값 : {y}')
+#         # print(f'result 의 값 : {result}')
+#         if result == 10:
+#             print(f'x={x}, y={y}')
+#         y = y + 1
     
     
-    x = x + 1
+#     x = x + 1
 
 # Q.# int타입의 변수 num 이 있을 때, 각 자리의 합을 더한 결과를 출력하는 코드를 완성하라. 
 # 만일 변수 num의 값이 12345라면, ‘1+2+3+4+5’의 결과인 15를 출력하라. 
