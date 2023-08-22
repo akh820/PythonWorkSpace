@@ -4,3 +4,5 @@ while a <= 100:
     sum = sum + a
 
     a = a + 1
+
+    b = b + 1
