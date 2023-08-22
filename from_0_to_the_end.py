@@ -233,3 +233,23 @@ while x <= 10:
             print(f'x = {x}, y = {y}')
         y += 1
     x += 1
+
+print("==="*20)
+print(r'1-10000사이에 8이 몇번나오는가?')
+print("답)")
+
+start = 1
+end = 100
+count = 0
+var = 0
+while start <= end: 
+    var = 0
+    var = start
+    if var % 10 == 8:
+        count += 1
+        var = var // 10
+        print(f'var가 {var}일때, start가 {start}일때, count가 {count}일때')
+    if var <= 0:
+        break
+    start += 1
+print(count)
