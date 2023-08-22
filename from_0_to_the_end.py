@@ -244,7 +244,7 @@ count = 0
 var = 0
 while start <= end: 
     var = 0
-    var = start
+    var = start 
     if var % 10 == 8:
         count += 1
         var = var // 10
