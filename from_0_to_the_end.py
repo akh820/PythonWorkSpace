@@ -253,3 +253,17 @@ while start <= end:
         break
     start += 1
 print(count)
+
+t = 10
+x = 2
+
+while x < t:  ## 2 < 10  -> 2 < 11 -> 10 < 11
+    if t % x == 0: ## 10 % 2 == 0 , 11 % 2 == 0 , 11 % 10 까지 출력안됨, 
+        print("소수가아닙니다") ## 소수가 아닙니다 출력
+        break
+
+    print(x) # 2 출력 3,4,5,6,7,8,9,10 출력
+    x = x + 1 # x는 3됨
+
+else:
+    print("소수입니다")
