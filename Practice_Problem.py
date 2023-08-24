@@ -345,33 +345,34 @@
 
 # print(count)
 
-# # 반복문을 이용하여 369게임에서 박수를 쳐야 하는 경우의 수를 순서대로 화면에 출력해보자. 1부터 시작하며 99까지만 한다. 
+# 반복문을 이용하여 369게임에서 박수를 쳐야 하는 경우의 수를 순서대로 화면에 출력해보자. 1부터 시작하며 99까지만 한다. 
 
-# # 실행 결과 예)           
-# # 3 박수한번
-# # 6 박수 한번
-# # 9 박수 한번 
-# # .
-# # .
-# # .
-# # 33 박수 두번
-# # .
-# # 98 박수 한번
-# # 99 박수 두번
-# i = 1
+# 실행 결과 예)           
+# 3 박수한번
+# 6 박수 한번
+# 9 박수 한번 
+# .
+# .
+# .
+# 33 박수 두번
+# .
+# 98 박수 한번
+# 99 박수 두번
+
+i = 1
 # count = 1
-#  #       if not ((i % 10 == 3 or i % 10 ==6 or i % 10 == 9) and (i // 10 == 3 or i // 10 == 6 or i // 10 == 9)):    
-# while (True):
-#     if ((i % 10 == 3 or i % 10 ==6 or i % 10 == 9)): # 10의로 나눴을때 나머지가 3인수를 전부 출력 + 30 ~ 39 까지 33,36,39 제외,
-#         print(f'{i} 박수한번')
-#         count += 1
-#         if ( (i // 10 == 3 or i // 10 == 6 or i // 10 == 9)): ## 33,36,39,63,66,69,93,96,96 에서 중복발생
-#             count += 2
-#             print(f'{i} 박수두번')
-#             count = 0
-#     if ( i == 100):
-#         break
-#     i = i + 1
+ #       if not ((i % 10 == 3 or i % 10 ==6 or i % 10 == 9) and (i // 10 == 3 or i // 10 == 6 or i // 10 == 9)):    
+while (True):
+    if ((i % 10 == 3 or i % 10 ==6 or i % 10 == 9)): # 10의로 나눴을때 나머지가 3인수를 전부 출력 + 30 ~ 39 까지 33,36,39 제외,
+        print(f'{i} 박수한번')
+        # count += 1
+        if ( (i // 10 == 3 or i // 10 == 6 or i // 10 == 9)): ## 33,36,39,63,66,69,93,96,96 에서 중복발생
+            # count += 2
+            print(f'{i} 박수두번')
+            # count = 0
+    if ( i == 100):
+        break
+    i = i + 1
 
 
 
@@ -405,31 +406,141 @@
 # 무한히 존재한다고 가정합니다. 
 # 손님에게 거슬러 주어야 할 돈이 N원일 때 거슬러 주어야 할 동전의 최소 개수를 구하세요. 
 # 단, 거슬러 줘야 할 돈 N은 항상 10의 배수입니다.
-n = 5444 # n = 1870 , 500*3 + 100*3 + 50*1 + 10*2
-count1 =0
-count2 =0
-count3 =0
-count4 =0
-if ((n // 10) >= 1):
-    if ((n // 500) >= 1): # 500원 짜리 동전 거스름
-        won500 = n // 500    # won500 = 1870 // 500 = 3
-        count1 = won500 # count = 3
-        price1 = n - 500*count1 # price1 = 1870 - 500*3 == 370
-    if((price1 // 100) >= 1): # price1 = 370
-        won100 = price1 // 100 # won100 = 3
-        count2 = won100 # count = 3
-        price2 = price1 - 100*count2 # price2 = 370 - 100 *3 = 70
-    if((price2 // 50) >= 1): #price2 = 70
-        won50 = price2 // 50 # won50 = 1
-        count3 = won50 # count# = 1
-        price3 = price2 - 50*count3 # price3 = 70 - 50 = 20
-    if((price3 // 10) >=1): 
-        won10 = price3 // 10 # won10 = 2
-        count4 = won10 # count = 2
-        price4 = price3 - 10*count4 #price4 = 20 - 20
-print(f'{n}원의 거스름돈을 계산합니다.')
-print(f'500원짜리 동전: {count1}')
-print(f'100원짜리 동전: {count2}')
-print(f'50원짜리 동전: {count3}')
-print(f'10원짜리 동전: {count4}')
-print(f'거슬러 주어야할 최소 동전의 개수는 {count1+count2+count3+count4}개 입니다.')
+# n = 5444 # n = 1870 , 500*3 + 100*3 + 50*1 + 10*2
+# count1 =0
+# count2 =0
+# count3 =0
+# count4 =0
+# if ((n // 10) >= 1):
+#     if ((n // 500) >= 1): # 500원 짜리 동전 거스름
+#         won500 = n // 500    # won500 = 1870 // 500 = 3
+#         count1 = won500 # count = 3
+#         price1 = n - 500*count1 # price1 = 1870 - 500*3 == 370
+#         if((price1 // 100) >= 1): # price1 = 370
+#             won100 = price1 // 100 # won100 = 3
+#             count2 = won100 # count = 3
+#             price2 = price1 - 100*count2 # price2 = 370 - 100 *3 = 70
+#             if((price2 // 50) >= 1): #price2 = 70
+#                 won50 = price2 // 50 # won50 = 1
+#                 count3 = won50 # count# = 1
+#                 price3 = price2 - 50*count3 # price3 = 70 - 50 = 20
+#                 if((price3 // 10) >=1): 
+#                     won10 = price3 // 10 # won10 = 2
+#                     count4 = won10 # count = 2
+#                     price4 = price3 - 10*count4 #price4 = 20 - 20
+# print(f'{n}원의 거스름돈을 계산합니다.')
+# print(f'500원짜리 동전: {count1}')
+# print(f'100원짜리 동전: {count2}')
+# print(f'50원짜리 동전: {count3}')
+# print(f'10원짜리 동전: {count4}')
+# print(f'거슬러 주어야할 최소 동전의 개수는 {count1+count2+count3+count4}개 입니다.')
+
+
+# Q.<문제> 1이 될 때까지: 문제 설명
+# • 어떠한 수 N이 1이 될 때까지 다음의 두 과정 중 하나를 반복적으로 선택하여 수행하려고 합니다. 
+# 단, 두번째 연산은 N이 K로 나누어 떨어질 때만 선택할 수 있습니다.
+# 1. N에서 1을 뺍니다.
+# 2. N을 K로 나눕니다.
+# • 예를 들어 N이 17, K가 4라고 가정합시다. 
+# 이때 1번의 과정을 한 번 수행하면 N은 16이 됩니다. 
+# 이후에 2번의 과정을 두 번 수행하면 N은 1이 됩니다. 
+# 결과적으로 이 경우 전체 과정을 실행한 횟수는 3이 됩니다. 
+# 이는 N을 1로 만드는 최소 횟수입니다.
+# • N과 K가 주어질 때 N이 1이 될 때까지 1번 혹은 2번의 과정을 수행해야 하는 
+# 최소 횟수를 구하는 프로그램을 작성하세요.
+
+# 입력 조건 : 1 <= N <= 100000 , 2 <= K <= 100000 , N과 K는 자연수
+
+# n = 17
+# k = 4
+# count = 0
+# while True:
+#     if not ( (n % k) == 0 ): # 17 % 4 == 1 False # 16 % 4 == 0 True 실행X
+#         n = n - 1 # n = 17 - 1 = 16 
+#         count += 1 # count = 1
+#     elif ( n % k == 0):
+#         n = n // k # n = 16 // 4 = 4 
+#         count += 1
+#     if ( n <= 1):
+#         break
+
+# print(f'최소 횟수 = {count}') # 17- 1 -> 16, 16 // 4 -> 4 
+
+# Q.시각
+# • 정수 N이 입력되면 00시 00분 00초부터 N시 59분 59초까지의 모든 시각 중에서 3이 하나라도 포함되는
+# 모든 경우의 수를 구하는 프로그램을 작성하세요. 예를 들어 1을 입력했을 때 다음은 3이 하나라도 포함되
+# 어 있으므로 세어야 하는 시각입니다.
+#    • 00시 00분 03초
+#    • 00시 13분 30초
+# • 반면에 다음은 3이 하나도 포함되어 있지 않으므로 세면 안 되는 시각입니다.
+#    • 00시 02분 55초
+#    • 01시 27분 45초
+# start = 0
+# end = 0
+# minute = 0
+# while ( start <= end ): # 0 <= 0 실행
+#     minute = 0
+#     while (minute <= 59): # minute = 0 실행
+#         second = 0
+#         while (second<= 59): # second = 0 실행
+#             if (second % 10 == 3 or second % 10 == 6 or second % 10 == 9 or ((second >= 30) and (second <= 39))):
+#                 print(f'0{start}시 {minute}분 {second}초') #각 조건에 맞게 출력
+#             second += 1    
+#         minute += 1
+#     start += 1
+
+# • 각 자리가 숫자(0부터 9)로만 이루어진 문자열 S가 주어졌을 때, 
+# 왼쪽부터 오른쪽으로 하나씩 모든 숫자를 확인하며 
+# 숫자 사이에 ‘×’ 혹은 ‘+’ 연산자를 넣어 결과적으로 만들어질 수 있는 
+# 가장 큰 수를 구하는 프로그램을 작성하세요. 
+# 단, +보다 ×를 먼저 계산하는 일반적인 방식과는 달리, 
+# 모든 연산은 왼쪽에서부터 순서대로 이루어진다고 가정합니다.
+# • 예를 들어 02984라는 문자열로 만들 수 있는 가장 큰 수는 
+# ((((0 + 2) × 9) × 8) × 4) = 576입니다. 
+# 또한 만들어질 수 있는 가장 큰 수는 항상 20억 이하의 정수가 되도록 입력이 주어집니다.
+
+# string = "1312" # 가장큰값 (1 + 3 + 1) * 2 , 2 1 3 1 
+# # num = int(string[::-1])
+# # print(num)
+# num = int(string)
+# c = 0
+# while (True): ## 변수값을 어케 저장하지?
+#     a = num % 10  # a = 1312 % 10 = 2 / 
+#     b = num // 10 # 2131 // 10 = 213
+#     num = b       # 1312
+#     if ( a == 1): 
+#         c = c + a 
+#     elif ( a >= 2):  
+#         c = c * a 
+#     print(a) 
+#     if ( num <= 0): 
+#         break
+# print(f'입력하신 각 자릿수의 합은 {c} 입니다.')
+
+
+# string = "00345" ## 여기서 0이 있으면 +, 없으면 x, 값 16이 나와야함
+# converted = int(string)
+# numberCalculated = []
+# i = 10
+# calculated = 0
+# sum = 0
+# while (sum <= 2000000000):
+#     calculated = converted % 10  # calculated = 345 % 10 = 5
+#     numberCalculated.append(calculated)
+#     print(numberCalculated)
+#     converted = calculated // 10
+#     break
+#     # i = string * 10
+
+
+
+# scores = []
+
+# scores.append(10) 
+# scores.append(50)
+# scores.append(30)
+
+# print(scores) # [10, 50, 30]
+
+# for x in scores:
+#     print(x)
