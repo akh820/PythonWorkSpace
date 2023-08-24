@@ -359,20 +359,20 @@
 # 98 박수 한번
 # 99 박수 두번
 
-i = 1
-# count = 1
- #       if not ((i % 10 == 3 or i % 10 ==6 or i % 10 == 9) and (i // 10 == 3 or i // 10 == 6 or i // 10 == 9)):    
-while (True):
-    if ((i % 10 == 3 or i % 10 ==6 or i % 10 == 9)): # 10의로 나눴을때 나머지가 3인수를 전부 출력 + 30 ~ 39 까지 33,36,39 제외,
-        print(f'{i} 박수한번')
-        # count += 1
-        if ( (i // 10 == 3 or i // 10 == 6 or i // 10 == 9)): ## 33,36,39,63,66,69,93,96,96 에서 중복발생
-            # count += 2
-            print(f'{i} 박수두번')
-            # count = 0
-    if ( i == 100):
-        break
-    i = i + 1
+# i = 1
+# # count = 1
+#  #       if not ((i % 10 == 3 or i % 10 ==6 or i % 10 == 9) and (i // 10 == 3 or i // 10 == 6 or i // 10 == 9)):    
+# while (True):
+#     if ((i % 10 == 3 or i % 10 ==6 or i % 10 == 9)): # 10의로 나눴을때 나머지가 3인수를 전부 출력 + 30 ~ 39 까지 33,36,39 제외,
+#         print(f'{i} 박수한번')
+#         # count += 1
+#         if ( (i // 10 == 3 or i // 10 == 6 or i // 10 == 9)): ## 33,36,39,63,66,69,93,96,96 에서 중복발생
+#             # count += 2
+#             print(f'{i} 박수두번')
+#             # count = 0
+#     if ( i == 100):
+#         break
+#     i = i + 1
 
 
 
@@ -406,34 +406,34 @@ while (True):
 # 무한히 존재한다고 가정합니다. 
 # 손님에게 거슬러 주어야 할 돈이 N원일 때 거슬러 주어야 할 동전의 최소 개수를 구하세요. 
 # 단, 거슬러 줘야 할 돈 N은 항상 10의 배수입니다.
-# n = 5444 # n = 1870 , 500*3 + 100*3 + 50*1 + 10*2
-# count1 =0
-# count2 =0
-# count3 =0
-# count4 =0
-# if ((n // 10) >= 1):
-#     if ((n // 500) >= 1): # 500원 짜리 동전 거스름
-#         won500 = n // 500    # won500 = 1870 // 500 = 3
-#         count1 = won500 # count = 3
-#         price1 = n - 500*count1 # price1 = 1870 - 500*3 == 370
-#         if((price1 // 100) >= 1): # price1 = 370
-#             won100 = price1 // 100 # won100 = 3
-#             count2 = won100 # count = 3
-#             price2 = price1 - 100*count2 # price2 = 370 - 100 *3 = 70
-#             if((price2 // 50) >= 1): #price2 = 70
-#                 won50 = price2 // 50 # won50 = 1
-#                 count3 = won50 # count# = 1
-#                 price3 = price2 - 50*count3 # price3 = 70 - 50 = 20
-#                 if((price3 // 10) >=1): 
-#                     won10 = price3 // 10 # won10 = 2
-#                     count4 = won10 # count = 2
-#                     price4 = price3 - 10*count4 #price4 = 20 - 20
-# print(f'{n}원의 거스름돈을 계산합니다.')
-# print(f'500원짜리 동전: {count1}')
-# print(f'100원짜리 동전: {count2}')
-# print(f'50원짜리 동전: {count3}')
-# print(f'10원짜리 동전: {count4}')
-# print(f'거슬러 주어야할 최소 동전의 개수는 {count1+count2+count3+count4}개 입니다.')
+n = 14870 # n = 1870 , 500*3 + 100*3 + 50*1 + 10*2
+count1 =0
+count2 =0
+count3 =0
+count4 =0
+if ((n // 10) >= 1):
+    if ((n // 500) >= 1): # 500원 짜리 동전 거스름
+        won500 = n // 500    # won500 = 1870 // 500 = 3
+        count1 = won500 # count = 3
+        price1 = n - 500*count1 # price1 = 1870 - 500*3 == 370
+        if((price1 // 100) >= 1): # price1 = 370
+            won100 = price1 // 100 # won100 = 3
+            count2 = won100 # count = 3
+            price2 = price1 - 100*count2 # price2 = 370 - 100 *3 = 70
+            if((price2 // 50) >= 1): #price2 = 70
+                won50 = price2 // 50 # won50 = 1
+                count3 = won50 # count# = 1
+                price3 = price2 - 50*count3 # price3 = 70 - 50 = 20
+                if((price3 // 10) >=1): 
+                    won10 = price3 // 10 # won10 = 2
+                    count4 = won10 # count = 2
+                    price4 = price3 - 10*count4 #price4 = 20 - 20
+print(f'{n}원의 거스름돈을 계산합니다.')
+print(f'500원짜리 동전: {count1}')
+print(f'100원짜리 동전: {count2}')
+print(f'50원짜리 동전: {count3}')
+print(f'10원짜리 동전: {count4}')
+print(f'거슬러 주어야할 최소 동전의 개수는 {count1+count2+count3+count4}개 입니다.')
 
 
 # Q.<문제> 1이 될 때까지: 문제 설명
