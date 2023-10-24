@@ -204,21 +204,21 @@
 # print(r'15. 2~100사이의 소수를 구해보자')
 # print("답)")
 
-num = 2
-primes = []
-while num <= 100:
-    count = 0
-    i = 1
-    while i <= num:
-        if num % i == 0:
-            count += 1
-        i += 1
-    if count == 2:
-        # print(f'{num} 의 약수의 개수가{count}가 됐으므로 약수입니다')
-        primes.append(num)
+# num = 2
+# primes = []
+# while num <= 100:
+#     count = 0
+#     i = 1
+#     while i <= num:
+#         if num % i == 0:
+#             count += 1
+#         i += 1
+#     if count == 2:
+#         # print(f'{num} 의 약수의 개수가{count}가 됐으므로 약수입니다')
+#         primes.append(num)
 
-    num += 1
-print(primes)
+#     num += 1
+# print(primes)
 
 # print("==="*20)
 # print(r'16.방정식 2x+4y=10의 모든 해를 구하시오. 단, x와 y는 정수이고 각각의 범위는 0<=x<=10, 0<=y<=10 이다.실행 결과)x=1, y=2x=3, y=1x=5, y=0')

@@ -310,13 +310,13 @@
 # # [주의] 문자열로 변환하지 말고 숫자로만 처리해야 한다.
 # # (API를 사용하지 않는다. 알고리즘으로만 처리)
 
-# num = 111111
+# num = 234
 # c = 0
 # while (True): ## 변수값을 어케 저장하지?
-#     a = num % 10 # a = 7
-#     b = num // 10 # b = 3322 , a에다가 b를 넣으면 a = 3322가됨 , 이거를 나머지 연산을 하면 다시 2를 구할 수 있음
-#     num = b
-#     c = c + a
+#     a = num % 10 # a = 4 / a = 3 / a = 1
+#     b = num // 10 # b = 13 / b = 1 / b = 0
+#     num = b # num = 13 / num = 1 / num = 0
+#     c = c + a # c = 4 / c = 7 / c = 8
 #     # a값을 저장해서 출력하고 싶은데
 #     if ( num <= 0):
 #         break
@@ -406,34 +406,34 @@
 # 무한히 존재한다고 가정합니다. 
 # 손님에게 거슬러 주어야 할 돈이 N원일 때 거슬러 주어야 할 동전의 최소 개수를 구하세요. 
 # 단, 거슬러 줘야 할 돈 N은 항상 10의 배수입니다.
-n = 14870 # n = 1870 , 500*3 + 100*3 + 50*1 + 10*2
-count1 =0
-count2 =0
-count3 =0
-count4 =0
-if ((n // 10) >= 1):
-    if ((n // 500) >= 1): # 500원 짜리 동전 거스름
-        won500 = n // 500    # won500 = 1870 // 500 = 3
-        count1 = won500 # count = 3
-        price1 = n - 500*count1 # price1 = 1870 - 500*3 == 370
-        if((price1 // 100) >= 1): # price1 = 370
-            won100 = price1 // 100 # won100 = 3
-            count2 = won100 # count = 3
-            price2 = price1 - 100*count2 # price2 = 370 - 100 *3 = 70
-            if((price2 // 50) >= 1): #price2 = 70
-                won50 = price2 // 50 # won50 = 1
-                count3 = won50 # count# = 1
-                price3 = price2 - 50*count3 # price3 = 70 - 50 = 20
-                if((price3 // 10) >=1): 
-                    won10 = price3 // 10 # won10 = 2
-                    count4 = won10 # count = 2
-                    price4 = price3 - 10*count4 #price4 = 20 - 20
-print(f'{n}원의 거스름돈을 계산합니다.')
-print(f'500원짜리 동전: {count1}')
-print(f'100원짜리 동전: {count2}')
-print(f'50원짜리 동전: {count3}')
-print(f'10원짜리 동전: {count4}')
-print(f'거슬러 주어야할 최소 동전의 개수는 {count1+count2+count3+count4}개 입니다.')
+# n = 14870 # n = 1870 , 500*3 + 100*3 + 50*1 + 10*2
+# count1 =0
+# count2 =0
+# count3 =0
+# count4 =0
+# if ((n // 10) >= 1):
+#     if ((n // 500) >= 1): # 500원 짜리 동전 거스름
+#         won500 = n // 500    # won500 = 1870 // 500 = 3
+#         count1 = won500 # count = 3
+#         price1 = n - 500*count1 # price1 = 1870 - 500*3 == 370
+#         if((price1 // 100) >= 1): # price1 = 370
+#             won100 = price1 // 100 # won100 = 3
+#             count2 = won100 # count = 3
+#             price2 = price1 - 100*count2 # price2 = 370 - 100 *3 = 70
+#             if((price2 // 50) >= 1): #price2 = 70
+#                 won50 = price2 // 50 # won50 = 1
+#                 count3 = won50 # count# = 1
+#                 price3 = price2 - 50*count3 # price3 = 70 - 50 = 20
+#                 if((price3 // 10) >=1): 
+#                     won10 = price3 // 10 # won10 = 2
+#                     count4 = won10 # count = 2
+#                     price4 = price3 - 10*count4 #price4 = 20 - 20
+# print(f'{n}원의 거스름돈을 계산합니다.')
+# print(f'500원짜리 동전: {count1}')
+# print(f'100원짜리 동전: {count2}')
+# print(f'50원짜리 동전: {count3}')
+# print(f'10원짜리 동전: {count4}')
+# print(f'거슬러 주어야할 최소 동전의 개수는 {count1+count2+count3+count4}개 입니다.')
 
 
 # Q.<문제> 1이 될 때까지: 문제 설명
@@ -475,19 +475,19 @@ print(f'거슬러 주어야할 최소 동전의 개수는 {count1+count2+count3+
 # • 반면에 다음은 3이 하나도 포함되어 있지 않으므로 세면 안 되는 시각입니다.
 #    • 00시 02분 55초
 #    • 01시 27분 45초
-# start = 0
-# end = 0
-# minute = 0
-# while ( start <= end ): # 0 <= 0 실행
-#     minute = 0
-#     while (minute <= 59): # minute = 0 실행
-#         second = 0
-#         while (second<= 59): # second = 0 실행
-#             if (second % 10 == 3 or second % 10 == 6 or second % 10 == 9 or ((second >= 30) and (second <= 39))):
-#                 print(f'0{start}시 {minute}분 {second}초') #각 조건에 맞게 출력
-#             second += 1    
-#         minute += 1
-#     start += 1
+start = 0
+end = 0
+minute = 0
+while ( start <= end ): # 0 <= 0 실행
+    minute = 0
+    while (minute <= 59): # minute = 0 실행
+        second = 0
+        while (second<= 59): # second = 0 실행
+            if (second % 10 == 3 or ((second >= 30) and (second <= 39))):
+                print(f'0{start}시 {minute}분 {second}초') #각 조건에 맞게 출력
+            second += 1    
+        minute += 1
+    start += 1
 
 # • 각 자리가 숫자(0부터 9)로만 이루어진 문자열 S가 주어졌을 때, 
 # 왼쪽부터 오른쪽으로 하나씩 모든 숫자를 확인하며 
